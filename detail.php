@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'clase_mp.php';
+require 'vendor/autoload.php';
 
 
     $img   = $_POST['img'];
@@ -9,15 +9,67 @@ include 'clase_mp.php';
     $unit  = $_POST['unit'];
 
 
-    //echo $img.'<br />'.$title.'<br />'.$price.'<br />'.unit.'<br />'.'<br />'.'<br />';
-    $MP = new PagosMP();
-    $MP->producto = $title;
-    $MP->precio = $price;
-    $MP->url_imagen = $img;
-    $MP->external_reference = 'tomasjuarez@gmail.com';
-    $link_pago = $MP->getLinkPago();
 
-    //$link_pago = '';
+
+
+
+
+    
+    MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
+    MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
+
+    $payer = new MercadoPago\Payer();
+    $payer->name = "Lalo";
+    $payer->surname = "Landa";
+    $payer->email = "test_user_63274575@testuser.com";
+    $payer->date_created = "2020-06-12T12:58:41.425-04:00";
+    $payer->phone = array(
+      "area_code" => "11",
+      "number" => "22223333"
+    );
+    $payer->identification = array(
+      "type" => "DNI",
+      "number" => "12345678"
+    );
+    $payer->address = array(
+      "street_name" => "False",
+      "street_number" => 123,
+      "zip_code" => "1111"
+    );
+
+
+    $item = new MercadoPago\Item();
+    $item->id = "1234";
+    $item->title = $title;
+    $item->description = "Dispositivo móvil de Tiendae - commerce";
+    $item->picture_url = $img;
+    $item->quantity = 1;
+    $item->unit_price = $price;
+
+
+    $preference = new MercadoPago\Preference();
+
+    $preference->back_urls = array(
+        "success" => "https://".$_SERVER['SERVER_NAME']."/mp_success.php",
+        "failure" => "https://".$_SERVER['SERVER_NAME']."/mp_failure.php",
+        "pending" => "https://".$_SERVER['SERVER_NAME']."/mp_pending.php"
+    );
+    $preference->auto_return = "approved";
+    $preference->notification_url = "https://".$_SERVER['SERVER_NAME']."/notificaciones.php";
+    $preference->payment_methods = array (
+        "excluded_payment_methods" => array ("id" => "amex"),
+        "excluded_payment_types" => array ("id" => "atm"),
+        "installments" => 6
+    );
+
+    $preference->items = array($item);
+    $preference->payer = $payer;
+    $preference->external_reference = 'tomasjuarez@gmail.com';
+    $preference->save();
+
+    //return $preference->id;//init_point;
+
+
 
 ?>
 <!DOCTYPE html>
@@ -154,15 +206,15 @@ include 'clase_mp.php';
                                         </h3>
                                     </div>
 
-                                    <a href="<?php echo $link_pago ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none;">Pagar</a>
+                                    <a href="<?php echo $preference->init_point; ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none;">Pagar</a>
                                     <script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>
 
-                                    <form action="/procesar-pago" method="POST">
+                                    <!--<form action="/procesar-pago" method="POST">
                                         <script
                                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                                         data-preference-id="<?php echo $link_pago; ?>">
                                         </script>
-                                    </form>
+                                    </form>-->
 
                                     <?php
                                     echo '<br><br><br>*****'.$img.'*****<br><br><br>';
