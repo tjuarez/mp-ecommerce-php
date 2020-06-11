@@ -12,7 +12,7 @@ class PagosMP
     public function getLinkPago(){
 
         MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
-
+        MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
         $payer = new MercadoPago\Payer();
         $payer->name = "Lalo";
@@ -37,7 +37,7 @@ class PagosMP
         $item = new MercadoPago\Item();
         $item->id = "1234";
         $item->title = $this->producto;
-        $item->description = "DispositivomóvildeTiendae-commerce";
+        $item->description = "Dispositivo móvil de Tiendae - commerce";
         $item->picture_url = $this->url_imagen;
         $item->quantity = 1;
         $item->unit_price = $this->precio;
@@ -46,9 +46,9 @@ class PagosMP
         $preference = new MercadoPago\Preference();
 
         $preference->back_urls = array(
-            "success" => "http://".$_SERVER['SERVER_NAME']."/mp_success.php",
-            "failure" => "http://".$_SERVER['SERVER_NAME']."/mp_failure.php",
-            "pending" => "http://".$_SERVER['SERVER_NAME']."/mp_pending.php"
+            "success" => "https://".$_SERVER['SERVER_NAME']."/mp_success.php",
+            "failure" => "https://".$_SERVER['SERVER_NAME']."/mp_failure.php",
+            "pending" => "https://".$_SERVER['SERVER_NAME']."/mp_pending.php"
         );
         $preference->auto_return = "approved";
         $preference->payment_methods = array (

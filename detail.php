@@ -153,7 +153,9 @@ include 'clase_mp.php';
                                     </div>
 
                                     <a href="<?php echo $link_pago ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none;">Pagar</a>
-                                    <script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>
+                                    <!--<script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>-->
+                                    <script type="text/javascript" src="https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js"></script>
+
 
 
                                     <!--<button type="button" class="mercadopago-button" formmethod="post" onclick="javascript:location.href">Pagar</button>-->
