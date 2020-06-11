@@ -8,6 +8,8 @@ include 'clase_mp.php';
     $price = $_POST['price'];
     $unit  = $_POST['unit'];
 
+
+    echo $img.'<br />'.$title.'<br />'.$price.'<br />'.unit.'<br />'.'<br />'.'<br />';
     $MP = new PagosMP();
     $MP->producto = $title;
     $MP->precio = $price;
