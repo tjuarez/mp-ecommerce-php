@@ -13,9 +13,9 @@ include 'clase_mp.php';
     $MP->precio = $price;
     $MP->url_imagen = $img;
     $MP->external_reference = 'tomasjuarez@gmail.com';
-    $link_pago = $MP->getLinkPago();
+    //$link_pago = $MP->getLinkPago();
 
-    //$link_pago = '';
+    $link_pago = '';
 
 ?>
 <!DOCTYPE html>
