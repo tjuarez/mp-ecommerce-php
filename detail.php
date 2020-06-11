@@ -9,14 +9,9 @@ require 'vendor/autoload.php';
     $unit  = $_POST['unit'];
 
 
-
-
-
-
-
     MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
     MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
-/*
+
     $payer = new MercadoPago\Payer();
     $payer->name = "Lalo";
     $payer->surname = "Landa";
@@ -65,12 +60,8 @@ require 'vendor/autoload.php';
     $preference->payer = $payer;
     $preference->external_reference = 'tomasjuarez@gmail.com';
     $preference->save();
-*/
-    //$link_mp = $preference->init_point;
-    $link_pago='';
 
-
-
+    $link_mp = $preference->init_point;
 ?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -207,18 +198,7 @@ require 'vendor/autoload.php';
                                     </div>
 
                                     <a href="<?php echo $link_mp; ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none;">Pagar</a>
-                                    <!--<script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>
-
-                                    <form action="/procesar-pago" method="POST">
-                                        <script
-                                        src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                                        data-preference-id="<?php echo $link_pago; ?>">
-                                        </script>
-                                    </form>-->
-
-                                    <?php
-                                    echo '<br><br><br>*****1111*****<br><br><br>';
-                                    ?>
+                                    <script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>
 
                                 </div>
                             </div>
