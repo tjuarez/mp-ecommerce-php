@@ -9,13 +9,13 @@ include 'clase_mp.php';
     $unit  = $_POST['unit'];
 
     $MP = new PagosMP();
-    //$MP->producto = $title;
-    //$MP->precio = $price;
-    //$MP->imagen = $img;
-    //$MP->external_reference = 'tomasjuarez@gmail.com';
-    //$link_pago = $MP->getLinkPago();
+    $MP->producto = $title;
+    $MP->precio = $price;
+    $MP->url_imagen = $img;
+    $MP->external_reference = 'tomasjuarez@gmail.com';
+    $link_pago = $MP->getLinkPago();
 
-    $link_pago = '';
+    //$link_pago = '';
 
 ?>
 <!DOCTYPE html>
