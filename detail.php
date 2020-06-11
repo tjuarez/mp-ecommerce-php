@@ -1,6 +1,6 @@
 <?php
 session_start();
-//include 'clase_mp.php';
+include 'clase_mp.php';
 
 
     $img   = $_POST['img'];
