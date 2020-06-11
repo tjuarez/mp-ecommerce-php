@@ -1,19 +1,21 @@
 <?php
 session_start();
-include 'clase_mp.php';
+//include 'clase_mp.php';
 
 
     $img   = $_POST['img'];
     $title = $_POST['title'];
     $price = $_POST['price'];
     $unit  = $_POST['unit'];
-
+/*
     $MP = new PagosMP();
     $MP->producto = $title;
     $MP->precio = $_POST['price'];
     $MP->imagen = $img;
     $MP->external_reference = 'tomasjuarez@gmail.com';
     $link_pago = $MP->getLinkPago();
+*/
+    $link_pago = '';
 
 ?>
 <!DOCTYPE html>
