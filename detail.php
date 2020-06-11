@@ -1,3 +1,20 @@
+<?php
+include 'clase_mp.php';
+
+
+    $img   = $_POST['img'];
+    $title = $_POST['title'];
+    $price = $_POST['price'];
+    $unit  = $_POST['unit'];
+
+    $MP = new PagosMP();
+    $MP->producto = $title;
+    $MP->precio = $_POST['price'];
+    $MP->imagen = $img;
+    $MP->external_reference = 'tomasjuarez@gmail.com';
+    $link_pago = $MP->getLinkPago();
+
+?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -7,6 +24,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="format-detection" content="telephone=no">
 
+    <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -100,7 +118,7 @@
                                             <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
                                                 <div class="as-tilegallery-element as-image-selected">
                                                     <div class=""></div>
-                                                    <img src="./assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url(<?php echo $_POST['img'] ?>) 2x);">
+                                                    <img src="./assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url(<?php echo $img ?>) 2x);">
                                                 </div>
                                                 
                                             </div>
@@ -118,19 +136,24 @@
                                         <div class="as-producttile-title">
                                             <h3 class="as-producttile-name">
                                                 <p class="as-producttile-tilelink">
-                                                    <span data-ase-truncate="2"><?php echo $_POST['title'] ?></span>
+                                                    <span data-ase-truncate="2"><?php echo $title ?></span>
                                                 </p>
 
                                             </h3>
                                         </div>
                                         <h3 >
-                                            <?php echo $_POST['price'] ?>
+                                            <?php echo $price ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo "$" . $_POST['unit'] ?>
+                                            <?php echo "$" . $unit ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+
+                                    <a href="<?php echo $link_pago ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none;">Pagar</a>
+                                    <script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>
+
+
+                                    <!--<button type="button" class="mercadopago-button" formmethod="post" onclick="javascript:location.href">Pagar</button>-->
                                 </div>
                             </div>
                         </div>
