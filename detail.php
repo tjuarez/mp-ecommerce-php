@@ -207,9 +207,9 @@ require 'vendor/autoload.php';
                                     </div>
 
                                     <a href="<?php echo $preference->init_point; ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none;">Pagar</a>
-                                    <script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>
+                                    <!--<script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>
 
-                                    <!--<form action="/procesar-pago" method="POST">
+                                    <form action="/procesar-pago" method="POST">
                                         <script
                                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                                         data-preference-id="<?php echo $link_pago; ?>">
