@@ -3,7 +3,7 @@ session_start();
 //require 'vendor/autoload.php';
 
 
-    $img   = $_POST['img'];
+    $img   = "https://".$_SERVER['SERVER_NAME'].$_POST['img'];
     $title = $_POST['title'];
     $price = $_POST['price'];
     $unit  = $_POST['unit'];
