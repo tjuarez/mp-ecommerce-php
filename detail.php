@@ -164,6 +164,10 @@ include 'clase_mp.php';
                                         </script>
                                     </form>
 
+                                    <?php
+                                    echo '<br><br><br>*****'.$img.'*****<br><br><br>';
+                                    ?>
+
                                 </div>
                             </div>
                         </div>
