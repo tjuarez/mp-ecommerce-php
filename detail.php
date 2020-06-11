@@ -67,7 +67,8 @@ require 'vendor/autoload.php';
     $preference->external_reference = 'tomasjuarez@gmail.com';
     $preference->save();
 
-    //return $preference->id;//init_point;
+    //$link_mp = $preference->init_point;
+    $link_pago='';
 
 
 
@@ -206,7 +207,7 @@ require 'vendor/autoload.php';
                                         </h3>
                                     </div>
 
-                                    <a href="<?php echo $preference->init_point; ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none;">Pagar</a>
+                                    <a href="<?php echo $link_mp; ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none;">Pagar</a>
                                     <!--<script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>
 
                                     <form action="/procesar-pago" method="POST">
