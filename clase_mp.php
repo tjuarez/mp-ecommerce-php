@@ -62,7 +62,7 @@ class PagosMP
         $preference->external_reference = $this->external_reference;
         $preference->save();
 
-        return $preference->init_point;
+        return $preference->id;//init_point;
 
     }
 
