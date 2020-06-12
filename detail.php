@@ -62,9 +62,9 @@ require 'vendor/autoload.php';
     $preference->save();
 
     print_r($preference);
-    print_r('**********************************************************************************');
-    print_r('XXXXXXXXXXXXXXXXXXXXXXXXXXX');
-    print_r('**********************************************************************************');
+    echo('<br>**********************************************************************************<br>');
+    echo('<br>XXXXXXXXXXXXXXXXXXXXXXXXXXX<br>');
+    echo('<br>**********************************************************************************<br>');
     print_r($preference->init_point);
     exit;
     $link_mp = $preference->init_point;
