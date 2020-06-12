@@ -61,6 +61,8 @@ require 'vendor/autoload.php';
     $preference->external_reference = 'tomasjuarez@gmail.com';
     $preference->save();
 
+    print_r($preference);
+    exit;
     $link_mp = $preference->init_point;
 ?>
 <!DOCTYPE html>
