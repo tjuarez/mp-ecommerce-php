@@ -62,6 +62,7 @@ require 'vendor/autoload.php';
     $preference->save();
 
     print_r($preference);
+    print_r($preference->init_point);
     exit;
     $link_mp = $preference->init_point;
 ?>
