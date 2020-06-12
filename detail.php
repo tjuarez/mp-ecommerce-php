@@ -58,12 +58,12 @@ require 'vendor/autoload.php';
 
     $preference->items = array($item);
     $preference->payer = $payer;
-    //$preference->external_reference = 'tomasjuarez@gmail.com';
+    $preference->external_reference = 'tomasjuarez@gmail.com';
     $preference->save();
 
     print_r($preference);
     echo('<br>**********************************************************************************<br>');
-    echo('<br>111111111111111111111111111111111111<br>');
+    echo('<br>2222222222222222222222222222222222222222222<br>');
     echo('<br>**********************************************************************************<br>');
     print_r($preference->init_point);
     exit;
