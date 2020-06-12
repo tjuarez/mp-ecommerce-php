@@ -49,7 +49,7 @@ require 'vendor/autoload.php';
         "pending" => "https://".$_SERVER['SERVER_NAME']."/mp_pending.php"
     );
     $preference->auto_return = "approved";
-    //$preference->notification_url = "https://".$_SERVER['SERVER_NAME']."/notificaciones.php";
+    $preference->notification_url = "https://".$_SERVER['SERVER_NAME']."/notificaciones.php";
     /*$preference->payment_methods = array (
         "excluded_payment_methods" => array ("id" => "amex"),
         "excluded_payment_types" => array ("id" => "atm"),
@@ -63,7 +63,7 @@ require 'vendor/autoload.php';
 
     print_r($preference);
     echo('<br>**********************************************************************************<br>');
-    echo('<br>2222222222222222222222222222222222222222222<br>');
+    echo('<br>333333333333333333333333333333333333333333<br>');
     echo('<br>**********************************************************************************<br>');
     print_r($preference->init_point);
     exit;
