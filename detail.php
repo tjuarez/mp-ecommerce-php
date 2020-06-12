@@ -63,6 +63,7 @@ require 'vendor/autoload.php';
 
     print_r($preference);
     print_r('**********************************************************************************');
+    print_r('XXXXXXXXXXXXXXXXXXXXXXXXXXX');
     print_r('**********************************************************************************');
     print_r($preference->init_point);
     exit;
