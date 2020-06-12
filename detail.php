@@ -50,9 +50,14 @@ require 'vendor/autoload.php';
     );
     $preference->auto_return = "approved";
     $preference->notification_url = "https://".$_SERVER['SERVER_NAME']."/notificaciones.php";
+
     $preference->payment_methods = array (
-        "excluded_payment_methods" => array ("id" => "amex"),
-        "excluded_payment_types" => array ("id" => "atm"),
+        "excluded_payment_methods" => array (
+            array("id" => "amex")
+        ),
+        "excluded_payment_types" => array (
+            array("id" => "atm")
+        ),
         "installments" => 6
     );
 
