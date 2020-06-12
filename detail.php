@@ -49,7 +49,7 @@ require 'vendor/autoload.php';
         "pending" => "https://".$_SERVER['SERVER_NAME']."/mp_pending.php"
     );
     $preference->auto_return = "approved";
-    $preference->notification_url = "https://".$_SERVER['SERVER_NAME']."/notificaciones.php";
+    //$preference->notification_url = "https://".$_SERVER['SERVER_NAME']."/notificaciones.php";
     /*$preference->payment_methods = array (
         "excluded_payment_methods" => array ("id" => "amex"),
         "excluded_payment_types" => array ("id" => "atm"),
@@ -58,7 +58,7 @@ require 'vendor/autoload.php';
 
     $preference->items = array($item);
     //$preference->payer = $payer;
-    $preference->external_reference = 'tomasjuarez@gmail.com';
+    //$preference->external_reference = 'tomasjuarez@gmail.com';
     $preference->save();
 
     print_r($preference);
