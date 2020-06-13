@@ -37,7 +37,8 @@
 
 
 $get = '';//$_GET;
-$post = $_POST;
+//$post = $_POST;
+$post = file_get_contents("php://input");
 
 http_response_code(200);
 
