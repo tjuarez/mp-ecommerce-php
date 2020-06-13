@@ -38,54 +38,28 @@ http_response_code(200);
 
 */
 
-/*
-$destinatario = "tomasjuarez@gmail.com"; 
-$asunto = "Este mensaje es de prueba"; 
-$cuerpo = ' 
-<html> 
-<head> 
-   <title>Prueba de correo</title> 
-</head> 
-<body> 
-<h1>Hola amigos!</h1> 
-<p> 
-<b>Bienvenidos a mi correo electrónico de prueba</b>. Estoy encantado de tener tantos lectores. Este cuerpo del mensaje es del artículo de envío de mails por PHP. Habría que cambiarlo para poner tu propio cuerpo. Por cierto, cambia también las cabeceras del mensaje. 
-</p> 
-</body> 
-</html> 
-'; 
 
-//para el envío en formato HTML 
-$headers = "MIME-Version: 1.0\r\n"; 
-$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+    $urlP = 'http://5.175.225.39:8080/ords/pelu/AgendaWeb/mp_ecommerce';
+	
+	$curlP = curl_init($urlP);
 
-//dirección del remitente 
-$headers .= "From: Miguel Angel Alvarez <pepito@desarrolloweb.com>\r\n"; 
+	//creo un objeto JSON con los datos a enviar al servicio web
+	$data = array(
+	    'empresa' => 'PRUEBA',
+	    'token' => 'PRUEBAAAAAAAAAAAA'
+	);
 
-//dirección de respuesta, si queremos que sea distinta que la del remitente 
-$headers .= "Reply-To: mariano@desarrolloweb.com\r\n"; 
+	$payload = json_encode($data);
 
-//ruta del mensaje desde origen a destino 
-$headers .= "Return-path: holahola@desarrolloweb.com\r\n"; 
+	//adjunto el objeto JSON al request
+	curl_setopt($curlP, CURLOPT_POSTFIELDS, $payload);
+	curl_setopt($curlP, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 
-mail($destinatario,$asunto,$cuerpo,$headers);
-*/
+	curl_setopt($curlP, CURLOPT_RETURNTRANSFER, true);
+	$json_textoP = curl_exec($curlP);
+	curl_close($curlP);
 
 
-
-ini_set("SMTP", "aspmx.l.google.com");
-ini_set("sendmail_from", "tomasjuarez@gmail.com");
-
-$message = "The mail message was sent with the following mail setting:\r\nSMTP = aspmx.l.google.com\r\nsmtp_port = 25\r\nsendmail_from = YourMail@address.com";
-
-$headers = "From: tomasjuarez@gmail.com";
-
-mail("tomasjuarez@gmail.com", "Testing", $message, $headers);
-echo "Check your email now....&lt;BR/>";
-
-
-
-
-echo "FINNNNNNNNNNNNNN";
+echo $json_textoP;
 
 ?>
