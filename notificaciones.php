@@ -46,6 +46,6 @@ http_response_code(200);
     $headers = "From:" . $from;
     mail($to,$subject,$message, $headers);
 
-
+echo "FIN";
 
 ?>
