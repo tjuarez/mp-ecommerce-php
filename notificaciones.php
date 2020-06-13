@@ -37,6 +37,8 @@ http_response_code(200);
     }
 
 */
+
+/*
 $destinatario = "tomasjuarez@gmail.com"; 
 $asunto = "Este mensaje es de prueba"; 
 $cuerpo = ' 
@@ -67,6 +69,22 @@ $headers .= "Reply-To: mariano@desarrolloweb.com\r\n";
 $headers .= "Return-path: holahola@desarrolloweb.com\r\n"; 
 
 mail($destinatario,$asunto,$cuerpo,$headers);
+*/
+
+
+
+ini_set("SMTP", "aspmx.l.google.com");
+ini_set("sendmail_from", "tomasjuarez@gmail.com");
+
+$message = "The mail message was sent with the following mail setting:\r\nSMTP = aspmx.l.google.com\r\nsmtp_port = 25\r\nsendmail_from = YourMail@address.com";
+
+$headers = "From: tomasjuarez@gmail.com";
+
+mail("tomasjuarez@gmail.com", "Testing", $message, $headers);
+echo "Check your email now....&lt;BR/>";
+
+
+
 
 echo "FINNNNNNNNNNNNNN";
 
