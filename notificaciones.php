@@ -1,7 +1,5 @@
 <?php
-session_start();
 
-http_response_code(200);
 /*
     MercadoPago\SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
 
@@ -40,6 +38,8 @@ http_response_code(200);
 
 $get = '';//$_GET;
 $post = $_POST;
+
+http_response_code(200);
 
     $urlP = 'http://5.175.225.39:8080/ords/pelu/AgendaWeb/mp_ecommerce';
 	
