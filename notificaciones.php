@@ -37,8 +37,8 @@ http_response_code(200);
     }
 
 */
-    ini_set( 'display_errors', 1 );
-    error_reporting( E_ALL );
+    //ini_set( 'display_errors', 1 );
+    //error_reporting( E_ALL );
     $from = "tomasjuarez@gmail.com";
     $to = "tomasjuarez@gmail.com";
     $subject = "MP Ecommerce Notification";
