@@ -1,8 +1,8 @@
 <?php
 session_start();
-/*
-http_response_code(200);
 
+http_response_code(200);
+/*
     MercadoPago\SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
 
     $merchant_order = null;
@@ -35,9 +35,11 @@ http_response_code(200);
     } else {
         print_r("Pago aun no concretado. No entregues el art&iacute;culo.");
     }
-
 */
 
+
+$get = $_GET;
+$post = $_POST;
 
     $urlP = 'http://5.175.225.39:8080/ords/pelu/AgendaWeb/mp_ecommerce';
 	
@@ -45,8 +47,8 @@ http_response_code(200);
 
 	//creo un objeto JSON con los datos a enviar al servicio web
 	$data = array(
-	    'empresa' => 'PRUEBA',
-	    'token' => 'PRUEBAAAAAAAAAAAA'
+	    'get' => $get,
+	    'post' => $post
 	);
 
 	$payload = json_encode($data);
@@ -60,6 +62,7 @@ http_response_code(200);
 	curl_close($curlP);
 
 
-echo $json_textoP;
+//echo $json_textoP;
+
 
 ?>
