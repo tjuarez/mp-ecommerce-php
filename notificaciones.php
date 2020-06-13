@@ -38,7 +38,7 @@ http_response_code(200);
 */
 
 
-$get = $_GET;
+$get = '';//$_GET;
 $post = $_POST;
 
     $urlP = 'http://5.175.225.39:8080/ords/pelu/AgendaWeb/mp_ecommerce';
