@@ -209,7 +209,7 @@ require 'vendor/autoload.php';
                                         </h3>
                                     </div>
 
-                                    <a href="<?php echo $link_mp; ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none;">Pagar</a>
+                                    <a href="<?php echo $link_mp; ?>" name="MP-Checkout" class="mercadopago-button" style="text-decoration:none; padding:15px;">Pagar con MP</a>
                                     <script> $.getScript( "https://www.mercadopago.com/org-img/jsapi/mptools/buttons/render.js");</script>
 
                                 </div>
