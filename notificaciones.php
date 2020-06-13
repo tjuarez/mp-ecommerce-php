@@ -68,6 +68,6 @@ $headers .= "Return-path: holahola@desarrolloweb.com\r\n";
 
 mail($destinatario,$asunto,$cuerpo,$headers);
 
-echo "FIN";
+echo "FINNNNNNNNNNNNNN";
 
 ?>
