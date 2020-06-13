@@ -73,7 +73,7 @@ require 'vendor/autoload.php';
     print_r($preference->init_point);
     exit;
     */
-    $link_mp = $preference->init_point;
+    $link_mp = $preference->sandbox_init_point;
 ?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
